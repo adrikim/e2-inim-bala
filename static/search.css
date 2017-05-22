@@ -1,0 +1,37 @@
+form {
+    width: 60%;
+    margin: 0 auto;
+}
+
+label {
+    width: 30%;
+    text-align: left;
+}
+
+label, input {
+    display: inline-block;
+}
+
+label + input {
+    width: 30%;
+    margin: 0 30% 0 4%;
+}
+
+#content {
+    padding-top: 55px;
+}
+
+#title {
+    color: #ffffff;
+    margin: 6px 10px 10px 15px; //47px
+
+}
+
+#menu-button {
+    padding: 0px 5px 5px 7px;
+    color: #ffffff;
+}
+
+.sidebar {
+    padding-top: 55px;
+}

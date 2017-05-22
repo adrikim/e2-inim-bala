@@ -1,6 +1,7 @@
+<!DOCTYPE html>
 <head>
   <meta charset="utf-8" />
-  <title>Semantic UI CDN</title>
+  <title>e2-inim-bala: English search</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.css"/>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.js"></script>
@@ -13,19 +14,17 @@
 
 	<form action="" method="get">
 
-	  <input type="text" name="search_en" placeholder="eg. cow, to turn, house..."/>
-      <input type="submit" value="Search"/><br/>
+	  <input type="text" name="search" placeholder="eg. cow, to turn, house..."/>
+      <input type="submit" value="Search"/><br>
 
-	  <a href="">advanced options</a>
-	  
-	  <div id="div_adv_options">
-        <label> <b>must</b> include: </label>
-        <input type="text" id="input_include"/><br/>
-        
-        <label> must <b>not</b> include: </label>
-        <input type="text" id="input_exclude"/> <br/>
-      </div>
-	
+	  <a href="">advanced options</a> <br>
+
+      <label> <b>must</b> include: </label>
+      <input type="text" id="include"/><br/>
+
+      <label> must <b>not</b> include: </label>
+      <input type="text" id="exclude"/> <br/>
+
 	</form>
 
   </div>

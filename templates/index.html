@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>e2-inim-bala: Sumerian search</title>
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.css"/>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.js"></script>
+
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='search.css')}}" />
+    </head>
+
+    <body>
+        <!-- Top navigation bar -->
+        <div id="navbar" class="ui fixed inverted main menu">
+            <div class="container">
+                <div class="title item">
+                    <i id="menu-button" class="content large link icon"></i>
+                </div>
+            </div>
+            <h1 id="title" class="ui header">e2-inim-bala</h1>
+        </div>
+
+        <div id="maincontainer" class="ui bottom attached segment pushable">
+
+          <div id="sidebar" class="ui visible left vertical sidebar menu">
+            <a class="item">Getting started</a>
+            <a class="item">Search</a>
+            <a class="item">Recently searched</a>
+            <a class="item">Favorites</a>
+            <a class="item">Useful pages</a>
+            <a class="item">About</a>
+          </div>
+
+          <div id="content" class="pusher">
+            <div class="ui basic segment">
+              <h3 class="ui header">Application Content</h3>
+              <p>First paragraph...</p>
+              <p>Second paragraph...</p>
+              <p>Third paragraph...</p>
+            </div>
+          </div>
+
+      </div>
+    </body>
+</html>
