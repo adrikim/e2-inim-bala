@@ -1,0 +1,32 @@
+<head>
+  <meta charset="utf-8" />
+  <title>Semantic UI CDN</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.css"/>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.js"></script>
+
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='search_en.css')}}" />
+</head>
+
+<body>
+  <div id="div_search_en">
+
+	<form action="" method="get">
+
+	  <input type="text" name="search_en" placeholder="eg. cow, to turn, house..."/>
+      <input type="submit" value="Search"/><br/>
+
+	  <a href="">advanced options</a>
+	  
+	  <div id="div_adv_options">
+        <label> <b>must</b> include: </label>
+        <input type="text" id="input_include"/><br/>
+        
+        <label> must <b>not</b> include: </label>
+        <input type="text" id="input_exclude"/> <br/>
+      </div>
+	
+	</form>
+
+  </div>
+</body>
