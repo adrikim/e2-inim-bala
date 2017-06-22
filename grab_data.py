@@ -58,9 +58,10 @@ def get_entries():
         # (399x: ED IIIb, Old Akkadian, Lagash II, Ur III, Old Babylonian, unknown)  wr. e; na-be2-a; be2; ne; da-me; na-be2; e7 "perfect plural and imperfect stem of dug[to speak]"
         summary = soup.find("div", { "class": "summary" }).find("p").text
         # NOTE all the info here is found in other sections anyway...
-        # TODO get time periods
+        # TODO get time periods (aka: ortho)
+        time_peroids = []
         # TODO get ortho forms here?
-
+        
         # get compounds
         compounds = soup.find("div", { "class": "summary" }).find("div", { "class": "compounds" }).find("p")
         entry['compounds'] = [ { a: a.text } for a in compounds.find_all("a") ] # { id#: citationForm[guideWord] }
@@ -72,9 +73,17 @@ def get_entries():
              "arm; labor; wing; horn; side; strength; wage; power" Akk.&nbsp;
         '''
         # TODO get orthography
+        # LOOK UP
         # TODO get orthography overview
+        table = soup.find(lambda tag: tag.name == 'table' and tag.has_key('id') and tag['id'] == "oview")
+        rows = talbe.findAll(lambda tag: tag.name == 'tr')
+
         # TODO get morphology/attested forms
+        morphology = soup.find("div", { "class": "morphology" }).find("p").text
+
         # TODO get senses/meanings
+        entry['sense'] = soup.find("div", { "class": "senses" }).find("h3", { "class": "sense" }).text.strip()
+        entry['usages'] = soup.find("div", { "class": "senses" }).find("div", { "class": "usages" }).text.strip()
         # get Akkadian glosses
         akk = soup.find("div", { "class": "glosses" }).text.lstrip(".\n").rstrip("\nAkk.\xa0")
         entry['akkadian'] = []
@@ -83,6 +92,7 @@ def get_entries():
             entry['akkadian'].append({ 'word': s[0], 'meaning': s[1]})
         # TODO get bibliography
         bib = soup.find("div", { "class": "bib" })
+        entry['bibliography'] = [ { a: a.text } for a in compounds.find_all("p")]
         # TODO get outlinks
         outlinks = soup.find("p", { "class": "outlink" })
         if outlinks.text:
@@ -91,3 +101,4 @@ def get_entries():
 if (__name__ == "__main__"):
     get_entries()
     pass
+    
